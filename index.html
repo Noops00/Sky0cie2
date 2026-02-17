@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Happy Valentines Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <section class="card-outer">
+      <div class="card-inner">
+        <h1 class="hero-title">HAPPY VALENTINES DAY!</h1>
+        <p class="subtitle">CLICK THE GIFT TO OPEN</p>
+
+        <button id="gift" class="gift" aria-label="Open gift">
+          <!-- simple heart-shaped gift SVG -->
+          <svg viewBox="0 0 200 180" class="gift-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ffb0c1" />
+                <stop offset="100%" stop-color="#ff6b88" />
+              </linearGradient>
+              <linearGradient id="ribbon" x1="0" x2="1">
+                <stop offset="0%" stop-color="#d43a55" />
+                <stop offset="100%" stop-color="#b91d73" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(0,8)">
+              <path class="heart-shape" d="M100 160 L80 142 C40 112 20 84 20 56 C20 32 40 15 64 15 C82 15 96 28 100 34 C104 28 118 15 136 15 C160 15 180 32 180 56 C180 84 160 112 120 142 L100 160 Z" fill="url(#g1)" stroke="#e86b86" stroke-width="2"/>
+              <rect class="gift-side" x="36" y="70" width="128" height="28" rx="6" fill="url(#ribbon)" opacity="0.98" />
+              <path class="ribbon-loop" d="M80 72 C94 50 108 50 122 72" stroke="#fff3" stroke-width="8" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+        </button>
+
+      </div>
+    </section>
+
+    <div id="surprise" class="surprise" aria-hidden="true">
+      <div class="surprise-card">
+        <button id="closeSurprise" class="close">×</button>
+        <h2>Surprise!</h2>
+        <p>Maaf terlalu sederhana, semoga kamu suka</p>
+        <div style="margin-top:12px">
+          <button id="openNext" class="cta" type="button">Lihat Halaman Berikutnya</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="confetti-root" aria-hidden="true"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

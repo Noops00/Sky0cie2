@@ -1,0 +1,49 @@
+:root{
+  --bg-start: #ffdede;
+  --bg-end: #ffd1e0;
+  --card-bg: #fff8f9;
+  --accent-1: #ff6b88;
+  --accent-2: #d43a55;
+  --muted: #5b3a46;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Montserrat,system-ui,Arial,sans-serif;color:var(--muted);}
+body{background:linear-gradient(180deg,var(--bg-start),var(--bg-end));display:flex;align-items:center;justify-content:center;padding:28px}
+
+.stage{width:100%;max-width:1100px}
+.card-outer{display:flex;align-items:center;justify-content:center}
+.card-inner{width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.96));border-radius:20px;padding:46px 40px;max-width:920px;box-shadow:0 30px 60px rgba(183,38,92,0.12);text-align:center}
+
+.hero-title{font-family:'Fredoka One',system-ui,Arial;letter-spacing:2px;color:#8b2a3a;margin:0;font-size:48px;text-transform:uppercase;text-shadow:0 6px 0 rgba(255,255,255,0.6),0 6px 18px rgba(139,42,58,0.06)}
+.subtitle{margin:12px 0 28px;font-weight:600;color:#8b3b46;letter-spacing:3px}
+
+.gift{background:none;border:0;padding:0;margin:18px auto 6px;cursor:pointer;display:block}
+.gift-svg{width:320px;height:280px;transition:transform 420ms cubic-bezier(.2,.85,.32,1),filter 300ms}
+.gift:hover .gift-svg{transform:translateY(-6px) scale(1.02)}
+.gift.open .gift-svg{transform:scale(0.96) rotate(-6deg)}
+.heart-shape{filter:drop-shadow(0 10px 24px rgba(183,38,92,0.12))}
+.gift-side{mix-blend-mode:multiply}
+
+/* simple CTA used by next page link */
+.cta{display:inline-block;padding:10px 14px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#fff;border-radius:12px;text-decoration:none;font-weight:600;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(183,38,92,0.12)}
+
+/* Surprise modal */
+.surprise{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;pointer-events:none}
+.surprise[aria-hidden="false"]{pointer-events:auto}
+.surprise-card{background:var(--card-bg);border-radius:12px;padding:28px 24px;max-width:520px;width:100%;box-shadow:0 30px 70px rgba(139,42,58,0.12);text-align:center;transform:translateY(8px);opacity:0;transition:all 260ms ease}
+.surprise[aria-hidden="false"] .surprise-card{transform:translateY(0);opacity:1}
+.surprise-card h2{margin:0 0 8px;font-size:22px}
+.surprise-card p{margin:0;color:#6a3f44}
+.close{position:absolute;right:18px;top:18px;background:transparent;border:0;font-size:26px;cursor:pointer;color:#7a4a50}
+
+/* confetti container */
+#confetti-root{position:fixed;inset:0;pointer-events:none;z-index:2500}
+.confetti-piece{position:absolute;width:10px;height:18px;opacity:0.95;transform-origin:center;will-change:transform,opacity}
+@keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+@media (max-width:600px){
+  .hero-title{font-size:28px}
+  .gift-svg{width:220px;height:190px}
+  .card-inner{padding:28px}
+}
